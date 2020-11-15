@@ -33,6 +33,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    public: 'ulfmagnetics-react-webpack.glitch.me'
+    public: 'sketchin.glitch.me'
   }
 };
