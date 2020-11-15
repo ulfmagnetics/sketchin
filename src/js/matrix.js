@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import Pixel from './pixel';
 
 function initialData({ rows, cols }) {
-  return Array(rows).fill({ r: 0, g: 0, b: 0 }).map(() => new Array(cols).fill({ r: 0, g: 0, b: 0 }));
+  return Array(cols).fill({ r: 0, g: 0, b: 0 }).map(() => new Array(rows).fill({ r: 0, g: 0, b: 0 }));
 }
 
-function renderRow(row, x) {
+function renderColumn(row, x) {
   return row.map((rgb, y) => (
-    <Pixel key={`${x}-${y}`} r={rgb.r} g={rgb.g} b={rgb.b} />
+    <Pixel key={`${x}-${y}`} x={x} y={y} r={rgb.r} g={rgb.g} b={rgb.b} />
   ));
 }
 
@@ -20,11 +20,7 @@ function Matrix(props) {
     <div className='matrix-container'>
       <h1>welcome to the matrix</h1>
       <div className='matrix-grid'>
-        {data.flatMap((row, x) => (
-          <div className='matrix-grid-row'>
-            {renderRow(row, x)}
-          </div>
-        ))}
+        {data.flatMap((row, x) => renderColumn(row, x))}
       </div>
     </div>
   );
