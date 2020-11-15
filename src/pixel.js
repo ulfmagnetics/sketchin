@@ -6,7 +6,7 @@ function Pixel(props) {
   
   const [rgb, setRgb] = useState([r,g,b]);
   
-  const rgbHex = `${r.toString(16)${g.toString(16)}${b.toString(16)}}`;
+  const rgbHex = `${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
   
   return (
     <div class='pixel' style="color: #{rgbHex}"></div>
@@ -18,3 +18,5 @@ Pixel.propTypes = {
   g: PropTypes.number,
   b: PropTypes.number,
 }
+
+export default Pixel;
