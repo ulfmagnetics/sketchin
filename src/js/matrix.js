@@ -7,19 +7,25 @@ function initialData({ rows, cols }) {
   return Array(rows).fill({ r: 0, g: 0, b: 0 }).map(() => new Array(cols).fill({ r: 0, g: 0, b: 0 }));
 }
 
+function renderRow(row, x) {
+  return row.map((rgb, y) => (
+    <Pixel key={`${x}-${y}`} r={rgb.r} g={rgb.g} b={rgb.b} />
+  ));
+}
+
 function Matrix(props) {
   const [data, setData] = useState(initialData(props));  
     
   return (
     <div className='matrix-container'>
       <h1>welcome to the matrix</h1>
-      <ul className='matrix-grid'>
-        {data.flatMap((row, x) => 
-          row.map((rgb, y) => {
-            return <Pixel key={`${x}-${y}`} r={rgb.r} g={rgb.g} b={rgb.b} />;
-          })
-        )}
-      </ul>
+      <div className='matrix-grid'>
+        {data.flatMap((row, x) => (
+          <div className='matrix-grid-row'>
+            {renderRow(row, x)}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

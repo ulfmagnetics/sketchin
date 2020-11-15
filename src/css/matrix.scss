@@ -2,15 +2,14 @@
   
 }
 
-ul.matrix-grid {
+.matrix-grid {
   margin: 0;
   padding: 0;
-  list-style: none;
-  columns: 64 auto;
+  columns: 64;
   
-  li {
-    width: 1vw;
-    height: 1vw;
+  .pixel {
+    width: 2vw;
+    height: 2vw;
     margin: 0;
     padding: 0;
   }
