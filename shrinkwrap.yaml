@@ -8,6 +8,7 @@ dependencies:
   express: 4.17.1
   jquery: 3.5.1
   popper.js: 1.16.1
+  prop-types: 15.7.2
   react: 17.0.1
   react-dom: 17.0.1
   react-router-dom: 5.2.0
@@ -4806,6 +4807,7 @@ specifiers:
   express: ^4.17.1
   jquery: ^3.5.1
   popper.js: ^1.16.1
+  prop-types: ^15.7.2
   react: ^17.0.1
   react-dom: ^17.0.1
   react-router-dom: ^5.2.0

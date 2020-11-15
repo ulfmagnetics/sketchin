@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-function initialData({ rows = 64, cols = 32}) {
+function initialData({ rows, cols }) {
   return Array(rows).fill(0).map(() => new Array(cols).fill(0));
 }
 
 function Matrix(props) {
-  // TODO: add property constraints
   const [data, setData] = useState(initialData(props));  
-  
-  console.log(data);
-  
+    
   return (
     <h1>welcome to the matrix</h1>
-  )
+  );
+}
+
+Matrix.propTypes = {
+  rows: PropTypes.number.required,
+  cols: PropTypes.number.required,
 }
 
 export default Matrix;

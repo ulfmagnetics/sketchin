@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 
 import Matrix from './matrix';
 
+// TODO: expose matrix size props in the UI
+
 ReactDOM.render(
   <div className="container">
-    <Matrix />
+    <Matrix rows={32} cols={64} />
   </div>,
   document.querySelector("#main")
 );
