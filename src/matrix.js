@@ -1,26 +1,17 @@
 import React, { useState } from 'react';
 
-// class Matrix {
-//   state = {
-//     data: []
-//   };
+function initialData({ rows = 64, cols = 32}) {
+  return Array(rows).fill(0).map(() => new Array(cols).fill(0));
+}
 
-//   initialize() {
-//     console.log("matrix initialized");
-//   }
-
-//   render() {
-//     const { data } = this.state;
-
-//     return <h1>this is your matrix</h1>;
-//   }
-// }
-
-function Matrix() {
-  const [matrixData] = useState([]);  
+function Matrix(props) {
+  // TODO: add property constraints
+  const [data, setData] = useState(initialData(props));  
+  
+  console.log(data);
   
   return (
-    
+    <h1>welcome to the matrix</h1>
   )
 }
 
