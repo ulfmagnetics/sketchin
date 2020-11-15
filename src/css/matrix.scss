@@ -2,17 +2,16 @@
   
 }
 
-.matrix-grid {
-  display: grid;
-  grid-template-columns: repeat(64, 1fr);
-  grid-template-rows: repeat(32, 1fr); 
-  column-gap: 1px;
-  row-gap: 1px;
-  width: 100%;
-  height: 50vw;
-}
-
-.pixel {
-  width: 1vw;
-  height: 1vw;
+ul.matrix-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 64 auto;
+  
+  li {
+    width: 1vw;
+    height: 1vw;
+    margin: 0;
+    padding: 0;
+  }
 }

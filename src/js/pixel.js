@@ -9,7 +9,7 @@ function Pixel(props) {
   const rgbHex = `${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
   
   return (
-    <div className='pixel' style={{backgroundColor: `#${rgbHex}`}}></div>
+    <li className='pixel' style={{backgroundColor: `#${rgbHex}`}}></li>
   );
 }
 

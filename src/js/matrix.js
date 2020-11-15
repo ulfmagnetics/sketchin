@@ -13,13 +13,13 @@ function Matrix(props) {
   return (
     <div className='matrix-container'>
       <h1>welcome to the matrix</h1>
-      <div className='matrix-grid'>
+      <ul className='matrix-grid'>
         {data.flatMap((row, x) => 
           row.map((rgb, y) => {
             return <Pixel key={`${x}-${y}`} r={rgb.r} g={rgb.g} b={rgb.b} />;
           })
         )}
-      </div>
+      </ul>
     </div>
   );
 }
