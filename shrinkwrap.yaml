@@ -1,5 +1,6 @@
 dependencies:
   '@babel/core': 7.12.3
+  '@babel/plugin-proposal-class-properties': 7.12.1
   '@babel/preset-env': 7.12.1
   '@babel/preset-react': 7.12.5
   babel-loader: 8.2.1
@@ -4797,6 +4798,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@babel/core': ^7.12.3
+  '@babel/plugin-proposal-class-properties': ^7.12.1
   '@babel/preset-env': ^7.12.1
   '@babel/preset-react': ^7.12.5
   babel-loader: ^8.2.1

@@ -1,17 +1,27 @@
-class Matrix {
-  state = {
-    data: []
-  };
+import React, { useState } from 'react';
 
-  initialize() {
-    console.log("matrix initialized");
-  }
+// class Matrix {
+//   state = {
+//     data: []
+//   };
 
-  render() {
-    const { data } = this.state;
+//   initialize() {
+//     console.log("matrix initialized");
+//   }
 
-    return <h1>this is your matrix</h1>;
-  }
+//   render() {
+//     const { data } = this.state;
+
+//     return <h1>this is your matrix</h1>;
+//   }
+// }
+
+function Matrix() {
+  const [matrixData] = useState([]);  
+  
+  return (
+    
+  )
 }
 
 export default Matrix;
