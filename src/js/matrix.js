@@ -15,10 +15,11 @@ function renderRow(row, x) {
 
 function Matrix(props) {
   const [data, setData] = useState(initialData(props));  
+  const { rows, cols } = props;
     
   return (
     <div className='matrix-container'>
-      <div className='matrix-grid'>
+      <div className='matrix-grid' style={{'--cols': cols}}>
         {data.flatMap((row, x) => renderRow(row, x))}
       </div>
     </div>
