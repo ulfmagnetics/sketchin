@@ -13,21 +13,7 @@
   
   <body>
     <div id="main"></div>
-
-    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     
-    <!-- option 1: include babel directly in the browser JS (but those lint errors tho) -->
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-    <script type="text/babel" src="src/like_button.js"></script>
-    
-    <!-- option 2: use webpack to pull everything together into a bundle -->
-    <!-- <script type="text/javascript" src="/bundle.js"></script> -->
+    <script type="text/javascript" src="/bundle.js"></script>
   </body>
 </html>

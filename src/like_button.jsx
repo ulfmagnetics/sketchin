@@ -1,5 +1,4 @@
-// webpack-only
-//import { React, ReactDOM } from 'react';
+import { React, ReactDOM } from 'react';
 
 const e = React.createElement;
 
@@ -21,6 +20,3 @@ class LikeButton extends React.Component {
     );
   }
 }
-
-const domContainer = document.querySelector("#main");
-ReactDOM.render(e(LikeButton), domContainer);
