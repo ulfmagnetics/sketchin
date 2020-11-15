@@ -14,8 +14,8 @@ function Matrix(props) {
 }
 
 Matrix.propTypes = {
-  rows: PropTypes.number.required,
-  cols: PropTypes.number.required,
+  rows: PropTypes.number.isRequired,
+  cols: PropTypes.number.isRequired,
 }
 
 export default Matrix;
