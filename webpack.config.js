@@ -1,28 +1,27 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  context: path.join(__dirname, "./"),
-  entry: "./src/main.jsx",
+  context: path.join(__dirname, './'),
+  entry: './src/main.js',
   output: {
-    path: path.join(__dirname, "public"),
-    filename: "bundle.js"
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.js?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [["@babel/preset-env", { targets: "defaults" }]]
-          }
-        }
+        include: path.join(__dirname, 'src'),
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
-    ]
-  }
+    ],
+  },
 };
