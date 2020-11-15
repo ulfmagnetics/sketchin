@@ -5,12 +5,13 @@
 .matrix-grid {
   margin: 0;
   padding: 0;
-  columns: 64;
+  display: grid;
+  grid-template-columns: 1fr repeat(63, 1fr);
   
   .pixel {
-    width: 2vw;
-    height: 2vw;
-    margin: 0;
+    width: calc(100vw / 64);
+    height: calc(100vw / 64);
+    margin: 1px;
     padding: 0;
     color: #fff;
     font-size: 4px;
