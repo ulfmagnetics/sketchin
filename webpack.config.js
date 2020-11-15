@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   context: path.join(__dirname, './'),
-  entry: './src/main.js',
+  entry: './app/main.js',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
@@ -16,7 +16,13 @@ module.exports = {
         test: /\.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        include: path.join(__dirname, 'src'),
+        include: path.join(__dirname, 'app'),
+        options: {
+          presets: [
+            ['@babel/preset-env', { targets: "defaults" }],
+            ['@babel/preset-react', { targets: "defaults" }]
+          ]
+        }
       },
       {
         test: /\.css$/,
