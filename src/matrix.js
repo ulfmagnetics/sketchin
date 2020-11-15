@@ -11,13 +11,13 @@ function Matrix(props) {
   const [data, setData] = useState(initialData(props));  
     
   return (
-    <div class='matrix-container'>
+    <div className='matrix-container'>
       <h1>welcome to the matrix</h1>
-      <div class='matrix-data'>
-        {data.forEach(row => 
-          row.forEach(col =>
-            <Pixel {...col} />
-          )
+      <div className='matrix-data'>
+        {data.flatMap(row => 
+          row.map(rgb => {
+            return <Pixel r={rgb.r} g={rgb.g} b={rgb.b} />;
+          })
         )}
       </div>
     </div>

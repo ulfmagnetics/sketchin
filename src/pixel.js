@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function Pixel(props) {
+  console.log('props:', props);
   const { r = 0, g = 0, b = 0 } = props;
   
   const [rgb, setRgb] = useState([r,g,b]);
@@ -9,7 +10,7 @@ function Pixel(props) {
   const rgbHex = `${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
   
   return (
-    <div class='pixel' style="color: #{rgbHex}"></div>
+    <div className='pixel' style={{color: 'rgbHex'}}></div>
   );
 }
 
