@@ -17,6 +17,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "@babel/preset-env": "^7.12.1",
+    "css-loader": "^5.0.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
@@ -25,6 +26,9 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "2.0.0",
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"

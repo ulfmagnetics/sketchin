@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Matrix from './matrix';
 
+import '../css/main.scss';
+
 // TODO: expose matrix size props in the UI
 
 ReactDOM.render(
