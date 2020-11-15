@@ -1,4 +1,4 @@
-import { React, ReactDOM } from 'react';
+import { React } from 'react';
 
 const e = React.createElement;
 
@@ -20,3 +20,5 @@ class LikeButton extends React.Component {
     );
   }
 }
+
+export default LikeButton;
