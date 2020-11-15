@@ -6,7 +6,7 @@ ReactDOM.render(
   <div className="container">
     <LikeButton />
 
-    <p>Do you still like me?</p>
+    <p>Do you still react to me?</p>
   </div>,
   document.querySelector("#main")
 );

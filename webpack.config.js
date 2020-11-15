@@ -30,9 +30,9 @@ module.exports = {
       }
     ],
   },
-  watch: true,
-  watchOptions: {
-    aggregateTimeout: 200,
-    poll: 1000
-  },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    public: 'ulfmagnetics-react-webpack.glitch.me'
+  }
 };
