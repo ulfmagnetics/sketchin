@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 function Pixel(props) {
   const { x, y, r = 0, g = 0, b = 0, debug = true } = props;
+  
+  const zeroPad = (num, padding = 2) => ("0".repeat(padding) + num).slice(-padding); 
     
-  const rgbHex = `${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+  const rgbHex = `${zeroPad(r.toString(16))}${zeroPad(g.toString(16))}${zeroPad(b.toString(16))}`;
   
   return (
     <div className='pixel' style={{backgroundColor: `#${rgbHex}`}}>
