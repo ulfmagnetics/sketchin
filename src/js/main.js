@@ -13,6 +13,9 @@ function onControlClicked(e) {
 
   e.preventDefault();
   console.log('onControlClicked: type=', controlType);
+  if (controlType == 'gradient') {
+    // TODO: somehow set the data in the matrix to a rainbow gradient 
+  }
 }
 
 ReactDOM.render(

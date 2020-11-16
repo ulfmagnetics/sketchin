@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Pixel from './pixel';
@@ -14,13 +14,19 @@ function renderRow(row, x) {
 }
 
 function Matrix(props) {
-  const [data, setData] = useState(initialData(props));  
-  const { rows, cols } = props;
+  const [currentData, setData] = useState(initialData(props));  
+  const { rows, cols, data: nextData } = props;
+  
+  useEffect(() => {
+    if (nextData) {
+      setData(nextData);    
+    }
+  });
     
   return (
     <div className='matrix-container'>
       <div className='matrix-grid' style={{'--cols': cols}}>
-        {data.flatMap((row, x) => renderRow(row, x))}
+        {currentData.flatMap((row, x) => renderRow(row, x))}
       </div>
     </div>
   );
@@ -29,6 +35,7 @@ function Matrix(props) {
 Matrix.propTypes = {
   rows: PropTypes.number.isRequired,
   cols: PropTypes.number.isRequired,
-}
+  data: PropTypes.array,
+};
 
 export default Matrix;
