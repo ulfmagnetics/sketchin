@@ -5,9 +5,10 @@ function Controls(props) {
   const { onClick } = props;
   
   return (
-    <div id='controls'>
-      <button data-control-type='gradient' onClick={onClick}>Gradient</button>
-    </div>
+    <ul className='controls'>
+      <li><button data-control-type='gradient' onClick={onClick}>Gradient</button></li>
+      <li><button data-control-type='reset' onClick={onClick}>Reset</button></li>
+    </ul>
   );
 }
 

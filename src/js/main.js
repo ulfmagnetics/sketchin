@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SketchinPage from './sketchin_page';
+import GridView from './grid_view';
 
 import '../css/main.scss';
 
@@ -9,7 +9,7 @@ import '../css/main.scss';
 
 ReactDOM.render(
   <div className="container">
-    <SketchinPage />
+    <GridView />
   </div>,
   document.querySelector("#main")
 );

@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Pixel from './pixel';
-
-function initialData({ rows, cols }) {
-  return Array(rows).fill({ r: 0, g: 0, b: 0 }).map(() => new Array(cols).fill({ r: 0, g: 0, b: 0 }));
-}
 
 function renderRow(row, x) {
   return row.map((rgb, y) => (
@@ -14,19 +10,12 @@ function renderRow(row, x) {
 }
 
 function Matrix(props) {
-  const [currentData, setData] = useState(initialData(props));  
-  const { rows, cols, data: nextData } = props;
-  
-  useEffect(() => {
-    if (nextData) {
-      setData(nextData);    
-    }
-  });
+  const { rows, cols, matrixData: data } = props;
     
   return (
     <div className='matrix-container'>
       <div className='matrix-grid' style={{'--cols': cols}}>
-        {currentData.flatMap((row, x) => renderRow(row, x))}
+        {data.flatMap((row, x) => renderRow(row, x))}
       </div>
     </div>
   );
@@ -35,7 +24,7 @@ function Matrix(props) {
 Matrix.propTypes = {
   rows: PropTypes.number.isRequired,
   cols: PropTypes.number.isRequired,
-  data: PropTypes.array,
+  matrixData: PropTypes.array,
 };
 
 export default Matrix;
