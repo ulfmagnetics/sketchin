@@ -8,6 +8,7 @@ dependencies:
   css-loader: 5.0.1
   express: 4.17.1
   jquery: 3.5.1
+  lodash.range: 3.2.0
   popper.js: 1.16.1
   prop-types: 15.7.2
   react: 17.0.1
@@ -3136,6 +3137,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
+  /lodash.range/3.2.0:
+    dev: false
+    resolution:
+      integrity: sha1-9GHliPZmg/fq3q3lE+OKaaVloV0=
   /lodash/4.17.20:
     dev: false
     resolution:
@@ -5113,6 +5118,7 @@ specifiers:
   css-loader: ^5.0.1
   express: ^4.17.1
   jquery: ^3.5.1
+  lodash.range: ^3.2.0
   popper.js: ^1.16.1
   prop-types: ^15.7.2
   react: ^17.0.1

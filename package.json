@@ -20,6 +20,7 @@
     "css-loader": "^5.0.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "lodash.range": "^3.2.0",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

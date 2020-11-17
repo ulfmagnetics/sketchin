@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Matrix from './matrix';
 import Controls from './controls';
-
-function fillGrid(rows, cols, r, g, b) {
-  return Array(rows).fill({ r, g, b }).map(() => new Array(cols).fill({ r, g, b }));
-}
+import { fillGrid, fillWithGradient } from './utils';
 
 function GridView() {
   const [numRows, setNumRows] = useState(32);
@@ -16,10 +13,8 @@ function GridView() {
     const controlType = e.target.getAttribute('data-control-type');
 
     e.preventDefault();
-    console.log('onControlClicked: type=', controlType);
     if (controlType == 'gradient') {
-      // TODO: make this an actual gradient
-      //setMatrixData(fillGrid(numRows, numCols, 128, 0, 128));
+      setMatrixData(fillWithGradient(numRows, numCols));
     }
     else if (controlType == 'reset') {
       setMatrixData(fillGrid(numRows, numCols, 0, 0, 0));
