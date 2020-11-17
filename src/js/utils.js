@@ -6,16 +6,16 @@ export function fillGrid(rows, cols, r, g, b) {
 
 export function fillWithGradient(rows, cols) {
   const data = fillGrid(rows, cols, 0, 0, 0);
+  const color1 = { r: 255, g: 0, b: 0 };
+  const color2 = { r: 0, g: 128, b: 255 };
   for (var col of range(cols)) {
+    const percent = col / cols;
+    const r = color1.r + percent * (color2.r - color1.r);
+    const g = color1.g + percent * (color2.g - color1.g);
+    const b = color1.b + percent * (color2.b - color1.b);
+    console.log(`col ${col}: r=${r}, g=${g}, b=${b}`);
     for (var row of range(rows)) {
-      const color1 = { r: 255, g: 0, b: 0 };
-      const color2 = { r: 0, g: 0, b: 255 };
-      const rowPercent = row / rows;
-      const colPercent = col / cols;
-      const r = color1.r + rowPercent * (color2.r - color1.r);
-      const g = color1.g + ((rowPercent + colPercent) / 2) * (color2.g - color1.g);
-      const b = color1.b + colPercent * (color2.b - color1.b);
-      data[row][col] = { r, g, b }; 
+      data[row][col] = { r: Math.round(r), g: Math.round(g), b: Math.round(b) }; 
     }
   }
   return data;
