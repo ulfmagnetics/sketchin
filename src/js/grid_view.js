@@ -19,7 +19,7 @@ function GridView() {
     console.log('onControlClicked: type=', controlType);
     if (controlType == 'gradient') {
       // TODO: make this an actual gradient
-      setMatrixData(fillGrid(numRows, numCols, 128, 0, 128));
+      //setMatrixData(fillGrid(numRows, numCols, 128, 0, 128));
     }
     else if (controlType == 'reset') {
       setMatrixData(fillGrid(numRows, numCols, 0, 0, 0));
