@@ -6,8 +6,8 @@ export function fillGrid(rows, cols, r, g, b) {
 
 export function fillWithGradient(rows, cols) {
   const data = fillGrid(rows, cols, 0, 0, 0);
-  const color1 = { r: 255, g: 0, b: 0 };
-  const color2 = { r: 0, g: 128, b: 255 };
+  const color1 = { r: 70, g: 235, b: 70 };
+  const color2 = { r: 225, g: 50, b: 225 };
   for (var col of range(cols)) {
     const percent = col / cols;
     const r = color1.r + percent * (color2.r - color1.r);
