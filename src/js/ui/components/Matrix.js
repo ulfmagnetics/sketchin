@@ -10,7 +10,7 @@ function renderRow(row, x) {
 }
 
 function Matrix(props) {
-  const { rows, cols, matrixData: data } = props;
+  const { rows, cols, data } = props;
     
   return (
     <div className='matrix-container'>
@@ -24,7 +24,7 @@ function Matrix(props) {
 Matrix.propTypes = {
   rows: PropTypes.number.isRequired,
   cols: PropTypes.number.isRequired,
-  matrixData: PropTypes.array,
+  data: PropTypes.array.isRequired,
 };
 
 export default Matrix;
