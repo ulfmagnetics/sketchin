@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import range from 'lodash.range';
 
-import { bmp_rgb } from 'lib/jsbmp';
+import { bmp_rgb } from '../lib/jsbmp';
 
 const fillGrid = (rows, cols, r, g, b) => {
   return Array(rows).fill({ r, g, b }).map(() => new Array(cols).fill({ r, g, b }));

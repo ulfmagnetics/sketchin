@@ -8,6 +8,7 @@ function Controls(props) {
     <ul className='controls'>
       <li><button data-control-type='gradient' onClick={onClick}>Gradient</button></li>
       <li><button data-control-type='reset' onClick={onClick}>Reset</button></li>
+      <li><button data-control-type='publish' onClick={onClick}>Publish</button></li>
     </ul>
   );
 }

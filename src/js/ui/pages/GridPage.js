@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import Bitmap, { bitmapWithGradient } from 'models/Bitmap';
-import Matrix from 'ui/components/Matrix';
-import Controls from 'ui/components/Controls';
+import Bitmap, { bitmapWithGradient } from '../../models/Bitmap';
+import Matrix from '../../ui/components/Matrix';
+import Controls from '../../ui/components/Controls';
 
 function GridPage() {
   const [numRows, setNumRows] = useState(32);
   const [numCols, setNumCols] = useState(64);
-  const [bitmap, setBitmap] = useState(new Bitmap());
+  const [bitmap, setBitmap] = useState(new Bitmap(numRows, numCols));
   
   const onControlClicked = (e) => {
     const controlType = e.target.getAttribute('data-control-type');
@@ -17,16 +17,16 @@ function GridPage() {
       setBitmap(bitmapWithGradient(numRows, numCols));
     }
     else if (controlType == 'reset') {
-      setBitmap(new Bitmap());
+      setBitmap(new Bitmap(numRows, numCols));
     }
     else if (controlType == 'publish') {
-      
+      publishBitmap(bitmap);
     }
   };
   
   return (
     <div className="container">
-      <Matrix data={bitmap.toArray()} />
+      <Matrix rows={numRows} cols={numCols} data={bitmap.toArray()} />
       <Controls onClick={onControlClicked} />
     </div>
   );

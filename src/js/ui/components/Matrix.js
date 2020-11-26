@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Pixel from './pixel';
+import Pixel from './Pixel';
 
 function renderRow(row, x) {
   return row.map((rgb, y) => (
