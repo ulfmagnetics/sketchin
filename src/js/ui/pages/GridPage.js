@@ -20,7 +20,7 @@ function GridPage() {
       setBitmap(new Bitmap(numRows, numCols));
     }
     else if (controlType == 'publish') {
-      publishBitmap(bitmap);
+      //publishBitmap(bitmap);
     }
   };
   
