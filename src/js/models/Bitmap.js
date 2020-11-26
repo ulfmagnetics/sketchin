@@ -37,7 +37,7 @@ class Bitmap {
   }
   
   toArray() {
-     
+     return this.data;
   }
 }
 

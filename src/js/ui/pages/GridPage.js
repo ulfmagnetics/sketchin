@@ -9,10 +9,6 @@ function GridPage() {
   const [numCols, setNumCols] = useState(64);
   const [bitmap, setBitmap] = useState(new Bitmap());
   
-  useEffect(() => {
-    // TODO: do something with the bitmap here?
-  });
-  
   const onControlClicked = (e) => {
     const controlType = e.target.getAttribute('data-control-type');
 
