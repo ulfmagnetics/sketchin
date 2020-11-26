@@ -9,7 +9,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [path.resolve(__dirname, 'src/js'), 'node_modules'],
+    alias: {
+      root: __dirname,
+      js: path.resolve(__dirname, 'src/js/')
+    }
   },
   module: {
     rules: [
