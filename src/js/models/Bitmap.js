@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import range from 'lodash.range';
+import S3 from 'aws-sdk/clients/s3';
 
 import { bmp_rgb } from '../lib/jsbmp';
 
@@ -38,6 +39,10 @@ class Bitmap {
   
   toArray() {
      return this.data;
+  }
+  
+  storeToS3() {
+    
   }
 }
 
