@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import GridView from './grid_view';
+import GridPage from './ui/pages/GridPage';
 
 import '../css/main.scss';
 
@@ -9,7 +9,7 @@ import '../css/main.scss';
 
 ReactDOM.render(
   <div className="container">
-    <GridView />
+    <GridPage />
   </div>,
   document.querySelector("#main")
 );

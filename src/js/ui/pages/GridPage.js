@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-import Matrix from './matrix';
-import Controls from './controls';
-import { fillGrid, fillWithGradient } from './utils';
-import { bmp_rgb } from './lib/jsbmp';
+import Bitmap from 'models/Bitmap';
+import Matrix from 'ui/components/Matrix';
+import Controls from 'ui/components/Controls';
 
-function GridView() {
+function GridPage() {
   const [numRows, setNumRows] = useState(32);
   const [numCols, setNumCols] = useState(64);
-  const [matrixData, setMatrixData] = useState(fillGrid(numRows, numCols, 0, 0, 0));
+  //const [matrixData, setMatrixData] = useState(fillGrid(numRows, numCols, 0, 0, 0));
+  const [bitmap, setBitmap] = useState(new Bitmap());
   
   useEffect(() => {
     // TODO: do something with the matrixData here?
@@ -37,4 +37,4 @@ function GridView() {
   );
 }
   
-export default GridView;
+export default GridPage;
