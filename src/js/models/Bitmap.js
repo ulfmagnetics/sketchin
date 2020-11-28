@@ -41,7 +41,7 @@ class Bitmap {
      return this.data;
   }
   
-  storeToS3() {
+  publish() {
     
   }
 }
