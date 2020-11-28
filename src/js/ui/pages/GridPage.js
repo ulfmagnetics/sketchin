@@ -9,11 +9,7 @@ function GridPage(props) {
   const [numRows, setNumRows] = useState(32);
   const [numCols, setNumCols] = useState(64);
   const [bitmap, setBitmap] = useState(new Bitmap(numRows, numCols));
-  
-  useEffect(() => {
-    console.log('GridPage: props=', props);
-  });
-  
+
   const onControlClicked = (e) => {
     const controlType = e.target.getAttribute('data-control-type');
 
@@ -28,7 +24,7 @@ function GridPage(props) {
       //publishBitmap(bitmap);
     }
   };
-  
+
   return (
     <div className="container">
       <Matrix rows={numRows} cols={numCols} data={bitmap.toArray()} />
@@ -36,5 +32,5 @@ function GridPage(props) {
     </div>
   );
 }
-  
+
 export default Page(GridPage);

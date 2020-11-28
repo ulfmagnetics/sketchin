@@ -1,8 +1,15 @@
+:root {
+  --amplify-primary-color: var(--dark);
+  --amplify-primary-contrast: var(--light);
+  --amplify-primary-tint: var(--gray);
+  --amplify-primary-shade: var(--gray);
+}
+
 ul.controls {
   list-style-type: none;
-  margin: 0;
+  margin: 20px 0px;
   padding: 0;
-  
+
   li {
     display: inline-block;
     margin: 0 20px;
