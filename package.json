@@ -11,6 +11,7 @@
     "start": "webpack serve --mode development"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.30",
     "aws-amplify": "^3.3.10",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
@@ -18,8 +19,8 @@
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.27.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "sass": "^1.29.0"
