@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import range from 'lodash.range';
-import S3 from 'aws-sdk/clients/s3';
 
 import { bmp_rgb } from '../lib/jsbmp';
 
@@ -20,7 +19,7 @@ const fillWithGradient = (rows, cols) => {
     const b = color1.b + percent * (color2.b - color1.b);
     console.log(`col ${col}: r=${r}, g=${g}, b=${b}`);
     for (var row of range(rows)) {
-      data[row][col] = { r: Math.round(r), g: Math.round(g), b: Math.round(b) }; 
+      data[row][col] = { r: Math.round(r), g: Math.round(g), b: Math.round(b) };
     }
   }
   return data;
@@ -36,13 +35,13 @@ class Bitmap {
     this.cols = cols;
     this.data = data;
   }
-  
+
   toArray() {
      return this.data;
   }
-  
+
   publish() {
-    
+
   }
 }
 

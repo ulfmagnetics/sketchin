@@ -1,4 +1,4 @@
-import compose from 'ramda';
+import { compose } from 'ramda';
 
 import withCognitoProvider from './withCognitoProvider';
 

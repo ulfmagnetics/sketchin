@@ -6,9 +6,9 @@ const withCognitoProvider = Component => props => {
   // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
   //     IdentityPoolId: 'us-east-1:0f25a34a-2823-4ae8-b31f-6ebb42efea71',
   // });
-  
-  const cognitoProvider = 'TODO!';
-  return <Components {...props} cognitoProvider={cognitoProvider} />;
+
+  const cognitoProvider = 'TODO';
+  return <Component {...props} cognitoProvider={cognitoProvider} />;
 };
 
 export default withCognitoProvider;
