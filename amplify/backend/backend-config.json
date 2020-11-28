@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "sketchin93f45d39": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
