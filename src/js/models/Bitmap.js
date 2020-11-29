@@ -10,10 +10,8 @@ const fillGrid = (rows, cols, r, g, b) => {
   return Array(rows).fill({ r, g, b }).map(() => new Array(cols).fill({ r, g, b }));
 }
 
-const fillWithGradient = (rows, cols) => {
+const fillWithGradient = (rows, cols, { color1, color2 }) => {
   const data = fillGrid(rows, cols, 0, 0, 0);
-  const color1 = { r: 0, g: 235, b: 70 };
-  const color2 = { r: 225, g: 50, b: 50 };
 
   const calc = (factor, row, color) => {
     const delta = factor * row / rows;
@@ -32,8 +30,12 @@ const fillWithGradient = (rows, cols) => {
   return data;
 }
 
-export function bitmapWithGradient(rows, cols) {
-  return new Bitmap(rows, cols, fillWithGradient(rows, cols));
+export function bitmapWithGradient(rows, cols, { index = 0 }) {
+  const colors = [
+    { color1: { r: 0, g: 235, b: 70 }, color2: { r: 225, g: 50, b: 50 } }, // gradient 1
+    { color1: { r: 235, g: 0, b: 70 }, color2: { r: 50, g: 225, b: 50 } }, // gradient 2
+  ];
+  return new Bitmap(rows, cols, fillWithGradient(rows, cols, colors[index]));
 };
 
 class Bitmap {

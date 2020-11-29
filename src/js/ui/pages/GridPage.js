@@ -14,8 +14,11 @@ function GridPage(props) {
     const controlType = e.target.getAttribute('data-control-type');
 
     e.preventDefault();
-    if (controlType == 'gradient') {
-      setBitmap(bitmapWithGradient(numRows, numCols));
+    if (controlType == 'gradient1') {
+      setBitmap(bitmapWithGradient(numRows, numCols, { index: 0 }));
+    }
+    else if (controlType == 'gradient2') {
+      setBitmap(bitmapWithGradient(numRows, numCols, { index: 1 }));
     }
     else if (controlType == 'reset') {
       setBitmap(new Bitmap(numRows, numCols));
