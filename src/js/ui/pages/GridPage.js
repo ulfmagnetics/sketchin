@@ -21,13 +21,13 @@ function GridPage(props) {
       setBitmap(new Bitmap(numRows, numCols));
     }
     else if (controlType == 'publish') {
-      //publishBitmap(bitmap);
+      bitmap.publish();
     }
   };
 
   return (
     <div className="container">
-      <Matrix rows={numRows} cols={numCols} data={bitmap.toArray()} />
+      <Matrix rows={numRows} cols={numCols} data={bitmap.getData()} />
       <Controls onClick={onControlClicked} />
     </div>
   );
