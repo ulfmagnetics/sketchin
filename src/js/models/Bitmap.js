@@ -49,10 +49,10 @@ class Bitmap {
 
   publish() {
     const pixels = this.data.reverse().flat().map(rgbToHex);
-    //console.log(pixels);
     const bmp = bmp_rgb(this.cols, this.rows, pixels);
     const data = new Uint8Array(Buffer.from(bmp, 'binary'));
     Storage.put('matrix.bmp', data, {
+      acl: 'public-read',
       level: 'protected',
       contentType: 'image/bmp',
     })
