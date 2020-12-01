@@ -29,9 +29,17 @@ function GridPage(props) {
   };
 
   return (
-    <div className="container">
-      <Matrix rows={numRows} cols={numCols} data={bitmap.getData()} />
-      <Controls onClick={onControlClicked} />
+    <div className="grid-container">
+      <div className="row">
+        <div className="col-sm">
+          <Matrix rows={numRows} cols={numCols} data={bitmap.getData()} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm">
+          <Controls onClick={onControlClicked} />
+        </div>
+      </div>
     </div>
   );
 }

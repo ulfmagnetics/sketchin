@@ -13,7 +13,7 @@ Storage.configure({ level: 'protected'});
 // TODO: add an error boundary
 
 ReactDOM.render(
-  <div className="container">
+  <div className="container-fluid">
     <GridPage />
   </div>,
   document.querySelector("#main")

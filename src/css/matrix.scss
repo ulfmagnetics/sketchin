@@ -1,5 +1,6 @@
 .matrix-container {
-  
+  width: 100%;
+  text-align: center;
 }
 
 .matrix-grid {
@@ -7,10 +8,10 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(var(--cols), 1fr);
-  
+
   .pixel {
-    width: calc((100vw - calc(var(--cols) * 2px)) / var(--cols));
-    height: calc((100vw - calc(var(--cols) * 2px)) / var(--cols));
+    width: calc(calc((100vw - calc(var(--cols) * 2px)) / var(--cols)) * 0.95);
+    height: calc(calc((100vw - calc(var(--cols) * 2px)) / var(--cols)) * 0.95);
     margin: 1px;
     padding: 0;
     color: #fff;
@@ -19,5 +20,9 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+
+    .pixel-debug {
+      visibility: var(--pixel-debug-visibility);
+    }
   }
 }

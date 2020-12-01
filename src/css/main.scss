@@ -1,6 +1,14 @@
 @use 'matrix';
 @use 'controls';
 
+:root {
+  --amplify-primary-color: var(--dark);
+  --amplify-primary-contrast: var(--light);
+  --amplify-primary-tint: var(--gray);
+  --amplify-primary-shade: var(--gray);
+  --pixel-debug-visibility: visible;
+}
+
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 0;

@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { rgbToHex } from '../../core/utils';
 
 function Pixel(props) {
-  const { x, y, r = 0, g = 0, b = 0, debug = true } = props;
+  const { x, y, r = 0, g = 0, b = 0 } = props;
 
   const rgb = { r: r, g: g, b: b };
 
   return (
     <div className='pixel' style={{backgroundColor: `#${rgbToHex(rgb)}`}}>
-      {debug && `${rgbToHex(rgb)}`}
+      <span className='pixel-debug'>{`${rgbToHex(rgb)}`}</span>
     </div>
   );
 }
