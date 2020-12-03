@@ -1,4 +1,4 @@
 Sketchin
 ========
 
-I'm trying to build a simple sketching tool in Javascript.
+A web UI for updating hardware RGB matrixes like the Adafruit Matrix Portal M4.
