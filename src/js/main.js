@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Amplify, { Storage } from 'aws-amplify';
-import AWSConfig from './aws-exports';
+import AWSConfig from './config/aws-exports';
 
 import GridPage from './ui/pages/GridPage';
 
