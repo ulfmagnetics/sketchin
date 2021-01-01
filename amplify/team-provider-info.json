@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sketchin-dev-110800-authRole",
+      "UnauthRoleArn": "arn:aws:iam::111015081113:role/amplify-sketchin-dev-110800-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::111015081113:role/amplify-sketchin-dev-110800-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sketchin-dev-110800-deployment",
+      "UnauthRoleName": "amplify-sketchin-dev-110800-unauthRole",
+      "StackName": "amplify-sketchin-dev-110800",
+      "StackId": "arn:aws:cloudformation:us-east-1:111015081113:stack/amplify-sketchin-dev-110800/86d0c860-4c4b-11eb-af3f-0ea1b88f1a89",
+      "AmplifyAppId": "d18hq7wu0gyip4"
+    },
+    "categories": {
+      "auth": {
+        "sketchin0e3c722d": {}
+      }
+    }
+  }
+}
