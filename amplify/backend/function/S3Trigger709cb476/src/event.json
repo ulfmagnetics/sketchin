@@ -1,5 +1,38 @@
 {
-  "key1": "value1",
-  "key2": "value2",
-  "key3": "value3"
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2021-01-01T22:48:05.027Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "A1VXNWNO4LHPBU"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "74.98.232.33"
+            },
+            "responseElements": {
+                "x-amz-request-id": "42C1658E937BA2F2",
+                "x-amz-id-2": "G0WEmjS/jtgzYajp4rZYai14W81tUSovaDfAICNyKIuTDnT1zBS55pn1bN396Ad88L+LYoaDjF6rkBwtTVCcOr63VLjy07Ut"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "57a3f195-1e41-449a-9563-ba346734c2a3",
+                "bucket": {
+                    "name": "sketchin110800-dev",
+                    "ownerIdentity": {
+                        "principalId": "A1VXNWNO4LHPBU"
+                    },
+                    "arn": "arn:aws:s3:::sketchin110800-dev"
+                },
+                "object": {
+                    "key": "protected/us-east-1%3A122f8334-3466-4da7-8eb0-7b9c8a344b8e/8674915567_07abb7f0ae_b.jpg",
+                    "size": 474509,
+                    "eTag": "e850198feebf07622d90713523574a40",
+                    "sequencer": "005FEFA6A88820A6C3"
+                }
+            }
+        }
+    ]
 }
