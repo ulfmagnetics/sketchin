@@ -1,11 +1,12 @@
 const AWS = require('aws-sdk');
 const S3 = new AWS.S3();
 const Sharp = require('sharp');
-const _chunk = require('lodash.chunk');
+const chunk = require('lodash.chunk');
+const path = require('path');
 
 const { bmp_rgb } = require('./jsbmp.js');
 
-// TODO: pull these in via env variables
+// TODO: determine dimensions by parsing the S3 key, e.g. /upload/64x32/image.jpg
 const MATRIX_WIDTH = 64;
 const MATRIX_HEIGHT = 32;
 
@@ -33,17 +34,18 @@ async function processRecord(record) {
 
   const buffer = await Sharp(image.Body).resize(MATRIX_WIDTH, MATRIX_HEIGHT).flip().raw().toBuffer();
 
-  const rgbs = _chunk(Array.from(buffer), 3);
+  const rgbs = chunk(Array.from(buffer), 3);
   const pixels = rgbs.map((rgb) => rgb.map(toHex).join(''));
 
   const data = bmp_rgb(MATRIX_WIDTH, MATRIX_HEIGHT, pixels);
 
   const keyPrefix = key.substr(0, key.indexOf('/upload/'));
+  const basename = path.basename(key).split('.')[0];
   await S3.putObject({
     ACL: 'public-read',
-    Body: Buffer.from(data, 'binary'),
+    Body: Buffer.from(data, 'binary'), // eslint-disable-line
     Bucket: bucketName,
-    Key: `${keyPrefix}/imported/test.bmp`, // TODO: use environment variable with UUID
+    Key: `${keyPrefix}/imported/${basename}.bmp`,
   }).promise();
 }
 
