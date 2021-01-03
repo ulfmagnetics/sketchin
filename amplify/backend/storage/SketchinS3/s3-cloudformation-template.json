@@ -82,26 +82,26 @@
 		"triggerFunction": {
 			"Type": "String"
 		},
-	
-    
-    
+
+
+
         "functionS3Trigger709cb476Name": {
             "Type": "String",
             "Default": "functionS3Trigger709cb476Name"
         },
-        
+
         "functionS3Trigger709cb476Arn": {
             "Type": "String",
             "Default": "functionS3Trigger709cb476Arn"
         },
-        
+
         "functionS3Trigger709cb476LambdaExecutionRole": {
             "Type": "String",
             "Default": "functionS3Trigger709cb476LambdaExecutionRole"
         }
-        
-        
-    
+
+
+
 
 	},
 	"Conditions": {
@@ -181,11 +181,11 @@
 	"Resources": {
 		"S3Bucket": {
 			"Type": "AWS::S3::Bucket",
-		    
+
             "DependsOn": [
 				"TriggerPermissions"
 			],
-            
+
 			"DeletionPolicy" : "Retain",
 			"Properties": {
 				"BucketName": {
@@ -223,7 +223,7 @@
                         }
                     ]
                 },
-                
+
                 "NotificationConfiguration": {
                     "LambdaConfigurations": [
                         {
@@ -240,7 +240,7 @@
                         }
                     ]
                 },
-                
+
 				"CorsConfiguration": {
 					"CorsRules": [
 						{
@@ -270,8 +270,8 @@
 				}
 			}
 		},
-      
-	    
+
+
 	    "TriggerPermissions": {
           "Type": "AWS::Lambda::Permission",
           "Properties": {
@@ -347,6 +347,7 @@
                             "Effect": "Allow",
                             "Action": [
                                 "s3:PutObject",
+                                "s3:PutObjectAcl",
                                 "s3:GetObject",
                                 "s3:ListBucket",
                                 "s3:DeleteObject"
@@ -370,7 +371,7 @@
                 }
             }
         },
-	    
+
 		"S3AuthPublicPolicy": {
 			"DependsOn": [
 				"S3Bucket"

@@ -33,6 +33,7 @@ async function processRecord(record) {
 
   // Note that we're "flopping" the image around its horizontal X axis since bmp_rgb
   // expects the data to be stored bottom-to-top.
+  // TODO: is this working as expected?
   const buffer = await Sharp(image.Body).resize(MATRIX_WIDTH, MATRIX_HEIGHT).flop().raw().toBuffer();
 
   const rgbs = _chunk(Array.from(buffer), 3);
@@ -40,10 +41,9 @@ async function processRecord(record) {
 
   const data = bmp_rgb(MATRIX_WIDTH, MATRIX_HEIGHT, pixels);
 
-  // FIXME: need to set the public-read ACL on new object (may require new permission for Lambda function)
-
   const keyPrefix = key.substr(0, key.indexOf('/upload/'));
   await S3.putObject({
+    ACL: 'public-read',
     Body: Buffer.from(data, 'binary'),
     Bucket: bucketName,
     Key: `${keyPrefix}/imported/test.bmp`, // TODO: use environment variable with UUID
