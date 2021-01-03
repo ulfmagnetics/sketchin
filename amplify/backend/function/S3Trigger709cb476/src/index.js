@@ -31,10 +31,7 @@ async function processRecord(record) {
 
   const image = await S3.getObject({ Bucket: bucketName, Key: key }).promise();
 
-  // Note that we're "flopping" the image around its horizontal X axis since bmp_rgb
-  // expects the data to be stored bottom-to-top.
-  // TODO: is this working as expected?
-  const buffer = await Sharp(image.Body).resize(MATRIX_WIDTH, MATRIX_HEIGHT).flop().raw().toBuffer();
+  const buffer = await Sharp(image.Body).resize(MATRIX_WIDTH, MATRIX_HEIGHT).flip().raw().toBuffer();
 
   const rgbs = _chunk(Array.from(buffer), 3);
   const pixels = rgbs.map((rgb) => rgb.map(toHex).join(''));

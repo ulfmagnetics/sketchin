@@ -60,7 +60,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-sketchin-dev-110800-deployment",
-          "S3Key": "amplify-builds/S3Trigger709cb476-714f324f6a6c324d6d39-build.zip"
+          "S3Key": "amplify-builds/S3Trigger709cb476-616e43362b412f4f6562-build.zip"
         }
       }
     },
