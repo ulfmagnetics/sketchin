@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
+import { v4 as uuid } from 'uuid';
 
 function Controls(props) {
   const { onClick } = props;
@@ -9,6 +10,8 @@ function Controls(props) {
   const onFileChange = (e) => {
     console.log(imageFile);
     setImageFile(e.target.files[0]);
+    const uuid = uuid();
+
   };
 
   return (

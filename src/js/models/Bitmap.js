@@ -1,8 +1,8 @@
 import range from 'lodash.range';
-import { Storage } from 'aws-amplify';
 
-import { bmp_rgb } from '../lib/jsbmp';
 import { rgbToHex } from '../core/utils';
+import { bmp_rgb } from '../lib/jsbmp';
+import { uploadFile, LIVE_MATRIX_FILE } from '../lib/storage';
 
 const fillGrid = (rows, cols, r, g, b) => {
   return Array(rows).fill({ r, g, b }).map(() => new Array(cols).fill({ r, g, b }));
@@ -51,13 +51,7 @@ class Bitmap {
     const pixels = this.data.reverse().flat().map(rgbToHex);
     const bmp = bmp_rgb(this.cols, this.rows, pixels);
     const data = new Uint8Array(Buffer.from(bmp, 'binary')); // eslint-disable-line
-    Storage.put('matrix.bmp', data, {
-      acl: 'public-read',
-      level: 'protected',
-      contentType: 'image/bmp',
-    })
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
+    uploadFile(LIVE_MATRIX_FILE, data);
   }
 }
 
