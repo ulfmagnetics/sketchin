@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
@@ -60,6 +61,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: resolveAppPath('public/index.html'),
+    }),
+    new ESLintPlugin({
+      context: "src",
     }),
   ],
   devServer: {
