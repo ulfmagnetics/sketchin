@@ -30,6 +30,9 @@ Arguments:
     bpp -- bits per pixel; use in conjunction with compression
     compression -- compression mode (e.g. uncompressed, 8-bit RLE, 4-bit RLE)
 */
+
+/* eslint-disable */
+
 function _bmp(width, height, palette, imgdata, bpp, compression) {
 
     var imgdatasize = imgdata.length;

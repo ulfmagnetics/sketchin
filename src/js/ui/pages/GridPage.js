@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Page from '../../core/hocs/Page';
 import Bitmap, { bitmapWithGradient } from '../../models/Bitmap';
 import Matrix from '../../ui/components/Matrix';
 import Controls from '../../ui/components/Controls';
 
-function GridPage(props) {
-  const [numRows, setNumRows] = useState(32);
-  const [numCols, setNumCols] = useState(64);
+function GridPage() {
+  const [numRows] = useState(32);
+  const [numCols] = useState(64);
   const [bitmap, setBitmap] = useState(new Bitmap(numRows, numCols));
 
   const onControlClicked = (e) => {

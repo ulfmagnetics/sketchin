@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Pixel from './Pixel';
@@ -10,8 +10,8 @@ function renderRow(row, x) {
 }
 
 function Matrix(props) {
-  const { rows, cols, data } = props;
-    
+  const { cols, data } = props;
+
   return (
     <div className='matrix-container'>
       <div className='matrix-grid' style={{'--cols': cols}}>

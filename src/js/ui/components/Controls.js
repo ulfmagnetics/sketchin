@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
 
-function onFileUpload() {
-
-}
-
 function Controls(props) {
   const { onClick } = props;
   const [imageFile, setImageFile] = useState();
 
   const onFileChange = (e) => {
+    console.log(imageFile);
     setImageFile(e.target.files[0]);
   };
 
@@ -20,7 +17,7 @@ function Controls(props) {
       <li><button data-control-type='gradient2' onClick={onClick}>Gradient 2</button></li>
       <li><button data-control-type='reset' onClick={onClick}>Reset</button></li>
       <li>
-        <input type="file" onChange={onFileUpload} />
+        <input type="file" onChange={onFileChange} />
         <button data-control-type='import'>Import</button>
       </li>
       <li><button data-control-type='publish' onClick={onClick}>Publish</button></li>

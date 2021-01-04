@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import range from 'lodash.range';
 import { Storage } from 'aws-amplify';
 
@@ -36,7 +34,7 @@ export function bitmapWithGradient(rows, cols, { index = 0 }) {
     { color1: { r: 235, g: 0, b: 70 }, color2: { r: 50, g: 225, b: 50 } }, // gradient 2
   ];
   return new Bitmap(rows, cols, fillWithGradient(rows, cols, colors[index]));
-};
+}
 
 class Bitmap {
   constructor(rows, cols, data = fillGrid(rows, cols, 0, 0, 0)) {
@@ -52,7 +50,7 @@ class Bitmap {
   publish() {
     const pixels = this.data.reverse().flat().map(rgbToHex);
     const bmp = bmp_rgb(this.cols, this.rows, pixels);
-    const data = new Uint8Array(Buffer.from(bmp, 'binary'));
+    const data = new Uint8Array(Buffer.from(bmp, 'binary')); // eslint-disable-line
     Storage.put('matrix.bmp', data, {
       acl: 'public-read',
       level: 'protected',
