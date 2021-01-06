@@ -1,23 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
-import { v4 as uuid } from 'uuid';
-
-import { uploadFile } from '../../lib/storage';
 
 function Controls(props) {
-  const { onClick } = props;
-  const [imageFile, setImageFile] = useState();
-
-  const onFileChange = (e) => {
-    setImageFile(e.target.files[0]);
-
-    const uuid = uuid();
-    const path = uploadPath(uuid);
-    uploadFile(path, imageFile).
-      then((result) => console.log(result)).
-      catch((err) => console.log(err));
-  };
+  const { onClick, onFileChange } = props;
 
   return (
     <ul className='controls'>
@@ -35,7 +21,8 @@ function Controls(props) {
 }
 
 Controls.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  onFileChange: PropTypes.func.isRequired,
 };
 
 export default Controls;
